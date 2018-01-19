@@ -102,8 +102,9 @@ export default {
                     circleRadius: +props.circleRadius,
                     clusterName: props.clusterName,
                     markerStroke: props.markerStroke,
-                    balloon: props.balloon, 
-                    balloonOptions
+                    balloon: props.balloon,
+                    balloonOptions,
+                    draggable: props.draggable || false
                 };
 
                 if (props.icon && props.icon.layout === 'default#image') {
@@ -145,7 +146,10 @@ export default {
                     iconImageHref: m.iconImageHref,
                     iconImageSize: m.iconImageSize,
                     iconImageOffset: m.iconImageOffset
-                } : { preset: m.icon && `islands#${utils.getIconPreset(m)}Icon` };                
+                } : {
+                  draggable: m.draggable,
+                  preset: m.icon && `islands#${utils.getIconPreset(m)}Icon`
+                 };
 
                 const strokeOptions = m.markerStroke ? {
                     strokeColor: m.markerStroke.color || "0066ffff",

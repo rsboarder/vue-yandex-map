@@ -28,7 +28,8 @@ export default {
         callbacks: Object,
         data: Object,
         balloonTemplate: String,
-        markerId: [String, Number]
+        markerId: [String, Number],
+        draggable: Boolean,
     },
     render() {
     },
